@@ -2,26 +2,30 @@ group 'com.example.bluetooth_print'
 version '1.0'
 
 buildscript {
+    ext {
+        agp_version = '8.5.0'
+    }
     repositories {
         google()
-        maven()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath "com.android.tools.build:gradle:$agp_version"
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        maven()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.example.bluetooth_print'
     compileSdk 34
 
     defaultConfig {
